@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Vacations", "Contoso.Vacations\Contoso.Vacations.csproj", "{0077990E-A799-4D5B-B3EE-D45192503625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.Vacations", "Contoso.Vacations\Contoso.Vacations.csproj", "{0077990E-A799-4D5B-B3EE-D45192503625}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AKS", "AKS", "{D86A08F1-86B5-45B3-83E2-76B5F04083AD}"
+	ProjectSection(SolutionItems) = preProject
+		contosovacations-api.yaml = contosovacations-api.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
