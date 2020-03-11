@@ -18,7 +18,8 @@ namespace Contoso.Vacations.Controllers
                     new Package { PackageId = 1, PackageName = "Maui", NumberOfNights=7, Price=3008},
                     new Package { PackageId = 2, PackageName = "Honolulu", NumberOfNights = 5, Price = 2005 },
                     new Package { PackageId = 3, PackageName = "Big Island", NumberOfNights = 6, Price = 2500 },
-                    new Package { PackageId = 3, PackageName = "Miami Beach", NumberOfNights = 7, Price = 2800 }
+                    new Package { PackageId = 4, PackageName = "Miami Beach", NumberOfNights = 7, Price = 2800 },
+                    new Package { PackageId = 5, PackageName = "Nassau Bahamas", NumberOfNights = 4, Price = 1999 }
          };
 
 
@@ -26,6 +27,7 @@ namespace Contoso.Vacations.Controllers
         [HttpGet]
         public IEnumerable<Package> Get()
         {
+            Console.WriteLine("Total number of Vacation Packages: " + _packages.Count);
             return _packages;
         }
 
@@ -33,10 +35,18 @@ namespace Contoso.Vacations.Controllers
         [HttpGet("{id}")]
         public Package Get(int id)
         {
-            return _packages.Find(x => x.PackageId == id);
+            Package package = _packages.Find(x => x.PackageId == id);
+
+            if (package != null)
+            {
+                Console.WriteLine("Vacation Package ID {0} found ", id);
+                return package;
+            }
+            else
+            {
+                Console.Error.WriteLine("Vacation Package ID {0} not found ", id);
+                return null;
+            }
         }
-
-
-
     }
 }

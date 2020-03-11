@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: contosovacations-api
-        image: umaracr.azurecr.io/contosovacationsapi:v1
+        image: umaracr.azurecr.io/contosovacationsapi:v3
         ports:
         - containerPort: 80
 ---
